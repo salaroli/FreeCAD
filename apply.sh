@@ -11,9 +11,9 @@ rm -rf "${FREECAD_VER}/Mod/IconThemes"
 cp -r "${REPO}/IconThemes" "${FREECAD_VER}/Mod/IconThemes"
 echo "applied: IconThemes addon"
 
-# Flat_Dark icon theme
-mkdir -p "${FREECAD_DATA}/Gui/Icons"
-cp "${REPO}/FreeCAD-Flat-Icons/Flat_Dark.rcc" "${FREECAD_DATA}/Gui/Icons/Flat_Dark.rcc"
+# Flat_Dark icon theme (FreeCAD 1.1 usa v1-1/Gui/Icons/)
+mkdir -p "${FREECAD_VER}/Gui/Icons"
+cp "${REPO}/FreeCAD-Flat-Icons/Flat_Dark.rcc" "${FREECAD_VER}/Gui/Icons/Flat_Dark.rcc"
 echo "applied: Flat_Dark.rcc"
 
 echo ""
