@@ -1,0 +1,6 @@
+[submodule "IconThemes"]
+	path = IconThemes
+	url = https://github.com/triplus/IconThemes.git
+[submodule "FreeCAD-Flat-Icons"]
+	path = FreeCAD-Flat-Icons
+	url = https://github.com/obelisk79/FreeCAD-Flat-Icons.git
