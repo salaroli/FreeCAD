@@ -1,1 +1,3 @@
 v1-1/system.cfg
+# só cache de verificação (LastCacheCheck)
+FreeCAD.conf
