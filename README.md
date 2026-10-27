@@ -4,33 +4,36 @@ Configurações pessoais do FreeCAD com UX próxima do Fusion 360.
 
 ## O que está configurado
 
-- **Navegação**: Revit style (Middle drag = Pan, Shift+Middle = Orbit — igual ao Fusion 360)
-- **Tema**: FreeCAD Light com accent azul `#0696D7` (cor do Fusion 360)
-- **11 atalhos** mapeados para espelhar o Fusion 360 (ver tabela abaixo)
-
-## Atalhos
+- **Navegação**: Blender style
+- **Tema**: OpenLight (addon [OpenTheme](https://github.com/obelisk79/OpenTheme), instalado pelo `apply.sh`)
+- **Atalhos** inspirados no Fusion 360:
 
 | Tecla | Ação |
 |---|---|
-| `E` | Extrude (Pad) |
+| `S` | Novo sketch (Part Design) |
+| `E` | Pad (extrude) |
 | `F` | Fillet |
-| `M` | Move/Transform |
-| `L` | Linha (Sketch) |
-| `R` | Retângulo (Sketch) |
-| `C` | Círculo (Sketch) |
-| `D` | Dimensão (Sketch) |
-| `T` | Trim (Sketch) |
-| `X` | Toggle Construction (Sketch) |
-| `P` | Projetar geometria (Sketch) |
-| `O` | Offset (Sketch) |
+| `X` | Alternar geometria de construção (Sketch) |
+| `D` | Medir |
+| `P` | Plano de referência (datum plane) |
+| `G, S` | Mapear sketch numa face |
+| `G, E` | Pocket |
+| `G, F` | Chamfer |
+
+## Preferência no git, estado fora
+
+O FreeCAD reescreve o `v1-1/user.cfg` inteiro ao fechar, junto com estado da sessão (arquivos recentes,
+tamanho de janela, último diretório, hashes de cache). O filtro `scripts/limpa-estado.py` (ligado pelo
+`.gitattributes` e configurado pelo `apply.sh`) tira esse estado do que vai para o git; o arquivo no disco
+continua completo. Assim o `git diff` mostra só preferência de verdade, igual em todas as máquinas.
+`FreeCAD.conf` e `system.cfg` são só cache/máquina e ficam fora.
 
 ## Instalação em uma máquina nova
 
 ```bash
-git clone git@github.com:salaroli/FreeCAD.git ~/.config/FreeCAD
+git clone https://github.com/salaroli/FreeCAD.git ~/.config/FreeCAD
+~/.config/FreeCAD/apply.sh
 ```
 
-Após clonar, abra o FreeCAD e confirme pelo GUI:
-- **Edit → Preferences → Display → Navigation → Navigation Style → Revit**
-
-> **Aviso**: FreeCAD reescreve o `user.cfg` ao fechar. Sempre fechar o FreeCAD antes de editar o config manualmente.
+> **Aviso**: FreeCAD reescreve o `user.cfg` ao fechar. Feche o FreeCAD antes de editar o config à mão
+> ou de dar `git pull`.
